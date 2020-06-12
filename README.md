@@ -38,17 +38,18 @@ alt="ZigDiggity 2019 DEMO" width="320" height="180" border="10" /></a>
 Using a default install of Raspbian, perform the following steps:
 
 * Plug your Raspbee into your Raspberry Pi
-* Enable serial using the `sudo raspbi-config` command
-  * Select "Advanced Options/Serial"
-  * Select *NO* to "Would you like a login shell to be accessible over serial?"
-  * Select *YES* to enabling serial
-  * Restart the Raspberry Pi
-* Install GCFFlasher available [Here](https://www.dresden-elektronik.de/funktechnik/service/download/driver/?L=1)
+* Enable serial using the `sudo raspi-config` command
+* Select "5 Interfacing Options"
+* Select "P6 Serial" 
+* Select *NO* to "Would you like a login shell to be accessible over serial?"
+* Select *YES* to enabling serial
+* Restart the Raspberry Pi
+* Install GCFFlasher (V2_10) available [Here](https://www.dresden-elektronik.de/download/software.html)
 * Flash the Raspbee's firmware
-  * `sudo GCFFlasher -f firmware/zigdiggity_raspbee.bin`
-  * `sudo GCFFlasher -r`
+* `sudo GCFFlasher -f firmware/zigdiggity_raspbee.bin`
+* `sudo GCFFlasher -r`
 * Install the python requirements using `pip3 install -r requirements.txt`
-* Patch scapy `sudo cp patch/zigbee.py /usr/local/lib/python3.5/dist-packages/scapy/layers/zigbee.py`
+* Patch scapy `sudo cp patch/zigbee.py <python3 install path>/site-packages/scapy/layers/zigbee.py`
 * Install wireshark on the device using `sudo apt-get install wireshark`
 
 ### Hardware
